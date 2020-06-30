@@ -15,6 +15,14 @@ let router = new VueRouter({
       ]
     },
     {
+      path: "/admin",
+      component: () => import('../layouts/AdminLayout.vue'),
+      children: [
+        {path: '', name: 'HomeAdminPage', component: () => import('../pages/AdminPage.vue')},
+        {path: '/addArticle', name: 'AddArticlePage', component: () => import('../components/addArticleComponent.vue')}
+      ]
+    },
+    {
       path: "*",
       component: () => import('../layouts/MyLayout.vue'),
       children: [

@@ -5,7 +5,7 @@
 			<v-row align="center" justify="center">
 				<v-card-text>
 					<p class="display-1 text--primary font-italic"> {{ titre }} :</p>
-					<p class="display-1 text--primary font-italic"> Mon Premier getters (items.length): {{ countItems }} :</p>					
+					<p class="display-1 text--primary font-italic"> {{ countItems }} </p>					
 				</v-card-text>
 				<v-list three-line>
 					<template v-for="(item, index) in items">

@@ -59,7 +59,6 @@ const getters = {
       .then(res => {
         console.log(res)
         // console.log(dataArray)
-
         console.log(res.data)
 
         state.newsData = res.data

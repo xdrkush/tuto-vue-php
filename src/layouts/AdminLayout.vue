@@ -9,31 +9,15 @@
 						<v-icon>mdi-home</v-icon>
 					</v-list-item-action>
 					<v-list-item-content >
-						<v-list-item-title>Home</v-list-item-title>
+						<v-list-item-title>Retour au site</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item link to="/contact">
+				<v-list-item link to="/addArticle">
 					<v-list-item-action>
-						<v-icon>mdi-email</v-icon>
+						<v-icon>mdi-plus-box</v-icon>
 					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>Contact</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-				<v-list-item link to="/crypto">
-					<v-list-item-action>
-						<v-icon>mdi-bitcoin</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>Crypto</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-				<v-list-item link to="/admin">
-					<v-list-item-action>
-						<v-icon>mdi-account</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>Admin</v-list-item-title>
+					<v-list-item-content >
+						<v-list-item-title>Créé un article</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 			</v-list>
@@ -41,9 +25,9 @@
 		<!-- / Sidebar Components -->
 
 		<!-- Navbar Components -->
-		<v-app-bar app color="indigo" dark>
+		<v-app-bar app color="purple" dark>
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-			<v-toolbar-title>Tuto Vuetify</v-toolbar-title>
+			<v-toolbar-title>Tuto Admin Vuetify</v-toolbar-title>
 		</v-app-bar>
 		<!-- / Navbar Components -->
 

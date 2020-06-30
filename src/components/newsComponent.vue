@@ -5,7 +5,7 @@
 			<v-row align="center" justify="center">
 				<v-card-text>
 					<p class="display-1 text--primary font-italic">News:</p>
-					<p class="display-1 text--primary font-italic">CountNews (oui, n'oublions pas le props du parent): {{ countData }}</p>
+					<p class="display-1 text--primary font-italic">{{ countData }}</p>
 				</v-card-text>
 				<v-card max-width="344" class="mx-auto" :key="dataNews" v-for="(news, dataNews) in dataNews">
 					<v-list-item>
