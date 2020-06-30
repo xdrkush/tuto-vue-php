@@ -47,25 +47,12 @@ const mutations = {
 const actions = {
   // eslint-disable-next-line no-empty-pattern
   editSearchNewsData({ commit }, payload) {
-    console.log(payload)
-    commit('mutationSearchNewsData', payload)
+    const data = payload
+    commit('mutationSearchNewsData', data)
   }
 }
 
 const getters = {
-  countItems: state => {
-    return state.items.length
-  },
-  countNewsData: state => {
-    // console.log(state.newsData.length)
-    return state.newsData.length
-  },
-  filterNewsData: state => {
-    const titleFilter   = (filter) => filter.titre_item.toLowerCase().includes(state.searchNewsData.toLowerCase())
-    return state.newsData.filter( filter => {
-      return titleFilter(filter)
-    })
-  },
   getNewsData(state) {
     axios
       .get('http://localhost:3000/api/liste_article.php')
@@ -83,6 +70,20 @@ const getters = {
         this.errored = true
       })
   },
+  countItems: state => {
+    return state.items.length
+  },
+  countNewsData: state => {
+    // console.log(state.newsData.length)
+    return state.newsData.length
+  },
+  filterNewsData: state => {
+    const dataNews = state.newsData
+    const titleFilter = (filter) => filter.titre_item.toLowerCase().includes(state.searchNewsData.toLowerCase())
+    return dataNews.filter( filter => {
+      return titleFilter(filter)
+    })
+  }  
 }
 
 export default {
