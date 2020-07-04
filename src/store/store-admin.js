@@ -35,7 +35,7 @@ const actions = {
       .catch((error) => {
         console.log(error)
       })
-  },
+  }
 }
 
 const getters = {

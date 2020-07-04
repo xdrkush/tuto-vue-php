@@ -57,6 +57,7 @@ const getters = {
     axios
       .get('http://localhost:3000/api/liste_article.php')
       .then(res => {
+        console.log('RES DATA')
         console.log(res)
         // console.log(dataArray)
         console.log(res.data)
@@ -78,7 +79,7 @@ const getters = {
   },
   filterNewsData: state => {
     const dataNews = state.newsData
-    const titleFilter = (filter) => filter.titre_item.toLowerCase().includes(state.searchNewsData.toLowerCase())
+    const titleFilter = (filter) => filter.title.toLowerCase().includes(state.searchNewsData.toLowerCase())
     return dataNews.filter( filter => {
       return titleFilter(filter)
     })

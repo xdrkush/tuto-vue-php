@@ -1,12 +1,21 @@
 # tuto-vue-php
 Tuto VueJS / Php
 
+## ( En cours )
+
 ## Pré-requis
   - Php 7.2
   - Node 12.18.1
   - Npm 6.9
-  - MySql 5.5
+  - MySQL 5.5 ou PostgreSQL 10.12
   - Vue-cli
+
+!!! ATTENTION / WARNING !!!
+
+Il y a 3 Branch:
+  - master = template ++ server Php - PostgreSQL
+  - mysql = template ++ server Php - MySQL
+  - template = template
 
 ## Installation
 
