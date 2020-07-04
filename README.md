@@ -26,20 +26,21 @@ cd Bureau/
 git clone https://github.com/xdrkush/tuto-vue-php.git
 cd tuto-vue-php/
 npm i
-npm start
+npm run configure
+npm run build
+npm run server
 ```
-(ici  nous installons tout les paquets que notre applications à besoin et nous la lançons)
-- Ouvrir un nouveau terminal (onglet ctrl + shift + T)
 
-```
-cd server/
-php -S localhost:3000
-```
-(ici nous lançons l'api)
+En cas de bug:
+  - checker la création de la DB psql
 
+## + d'info
+Biensur c'est un tuto donc vous devrez bien mettre:
+  - ./bin/*
+  - ./config
+dans votre .gitignore
 
 ## Sources
-
 On Linux
 
   Installer PHP
