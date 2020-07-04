@@ -37,7 +37,6 @@ php -S localhost:3000
 ```
 (ici nous lançons l'api)
 
-
 ## Sources
 
 On Linux
