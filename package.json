@@ -1,13 +1,13 @@
 {
-  "name": "tuto-vue-php",
+  "name": "15-build",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
+    "reinstall": "sudo rm -r node_modules/ && sudo rm -r dist/ && npm i && npm run build",
     "serve": "vue-cli-service serve",
-    "configure_psql": "./bin/configure_psql.sh",
-    "server": "cd server/ && php -S localhost:3000",
     "build": "vue-cli-service build",
+    "rebuild": "sudo rm -r dist/ && npm run build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -44,6 +44,15 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "> 1%",

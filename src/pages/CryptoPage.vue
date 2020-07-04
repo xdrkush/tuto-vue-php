@@ -17,6 +17,8 @@ export default {
 	components: {
 		cryptoComponent
 	},
+	methods: {
+	},
 	computed: {
 		...mapGetters("crypto", ["getPrice"]),
 		...mapState("crypto", ["price", "priceArray", "converter"])

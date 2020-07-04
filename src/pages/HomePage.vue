@@ -9,7 +9,7 @@
 		<!-- / Search Bar Components -->
 
 		<!-- Card News Components -->
-		<newsComponent titre="News :" :getNewsDate='getNewsData' :dataNews="filterNewsData" :countData="countNewsData" />
+		<newsComponent titre="News :" :dataNews="filterNewsData" :countData="countNewsData" />
 		<!-- / Card News Components -->
 
 		<!-- List Result Components -->
@@ -41,8 +41,8 @@ export default {
 		...mapActions('home', ['editSearchNewsData'])
 	},
 	computed: {
-		...mapGetters("home", ["getNewsData", "countNewsData", "filterNewsData"]),
-		...mapState("home", ['newsData', 'searchNewsData'])
+		...mapState("home", ['newsData', 'searchNewsData']),
+		...mapGetters("home", ["countNewsData", "filterNewsData"])
 	}
 };
 </script>

@@ -1,9 +1,25 @@
-import axios from 'axios'
-
 const state = {
   firstState: 'Mon premier state !',
   searchNewsData: '',
-  newsData: [],
+  newsData: [{
+      title: 'Our Changing Planet 1',
+      author: 'Hsuk Rd',
+      image: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg',
+      message: 'Visit ten places on our planet that are undergoing the biggest changes today.'
+    },
+    {
+      title: 'Our Changing Planet 2',
+      author: 'Kurt Wagner',
+      image: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg',
+      message: 'Visit ten places on our planet that are undergoing the biggest changes today.'
+    },
+    {
+      title: 'Our Changing Planet 3',
+      author: 'Tux Torvalds',
+      image: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg',
+      message: 'Visit ten places on our planet that are undergoing the biggest changes today.'
+    }
+  ],
   items: [
     { header: "Today" },
     {
@@ -47,29 +63,12 @@ const mutations = {
 const actions = {
   // eslint-disable-next-line no-empty-pattern
   editSearchNewsData({ commit }, payload) {
-    const data = payload
-    commit('mutationSearchNewsData', data)
+    console.log(payload)
+    commit('mutationSearchNewsData', payload)
   }
 }
 
 const getters = {
-  getNewsData(state) {
-    axios
-      .get('http://localhost:3000/api/liste_article.php')
-      .then(res => {
-        console.log('RES DATA')
-        console.log(res)
-        // console.log(dataArray)
-        console.log(res.data)
-
-        state.newsData = res.data
-
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-  },
   countItems: state => {
     return state.items.length
   },
@@ -78,12 +77,14 @@ const getters = {
     return state.newsData.length
   },
   filterNewsData: state => {
-    const dataNews = state.newsData
-    const titleFilter = (filter) => filter.title.toLowerCase().includes(state.searchNewsData.toLowerCase())
-    return dataNews.filter( filter => {
-      return titleFilter(filter)
+    const titleFilter   = (filter) => filter.title.toLowerCase().includes(state.searchNewsData.toLowerCase()),
+          authorFilter  = (filter) => filter.author.toLowerCase().includes(state.searchNewsData.toLowerCase()),
+          messageFilter = (filter) => filter.message.toLowerCase().includes(state.searchNewsData.toLowerCase())
+
+    return state.newsData.filter( filter => {
+      return titleFilter(filter) || authorFilter(filter) || messageFilter(filter)
     })
-  }  
+  }
 }
 
 export default {
