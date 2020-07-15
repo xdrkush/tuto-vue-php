@@ -91,8 +91,7 @@ export default {
 	},
 	methods: {
 		formCreateArticle () {
-			// console.log(data)
-			this.sendArticle(this.formArticle)
+			this.createArticle(this.formArticle)
 		},
 		reset () {
 			this.resetArticle()

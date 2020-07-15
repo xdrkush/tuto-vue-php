@@ -22,12 +22,7 @@ const actions = {
   // eslint-disable-next-line no-empty-pattern
   createArticle ({}, payload) {
     axios
-      .post('http://localhost:3000/api/create_article.php', {
-        author: payload.author,
-        title: payload.title,
-        description: payload.description,
-        subject: payload.subject
-      })
+      .post('http://localhost:3000/api/create_article.php', payload)
       .then(res => {
         console.log('create')
         console.log(res)

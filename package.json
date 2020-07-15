@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm run serve",
+    "full": "npm i && npm run configure_psql && npm run build && npm run server",
     "serve": "vue-cli-service serve",
     "configure_psql": "./bin/configure_psql.sh",
+    "configure_mysql": "./bin/configure_mysql.sh",
     "server": "cd server/ && php -S localhost:3000",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
